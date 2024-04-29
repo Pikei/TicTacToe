@@ -42,97 +42,96 @@ public class TicTacToeController {
     private Label winLabel;
     private OpponentController opponentController;
     private boolean gameActive;
-    protected boolean endGame = false;
     private boolean difficultySelected = false;
 
 
     @FXML
     protected void onButton1Click() {
-        if (button1.getText().isEmpty() && !endGame) {
+        if (button1.getText().isEmpty() && !gameOver()) {
             button1.setText("X");
+            opponentController.setGameOver(gameOver());
             opponentController.checkArea();
-            endGame = gameOver();
-            opponentController.setGameOver(endGame);
+            opponentController.setGameOver(gameOver());
         }
     }
 
     @FXML
     protected void onButton2Click() {
-        if (button2.getText().isEmpty() && !endGame) {
+        if (button2.getText().isEmpty() && !gameOver()) {
             button2.setText("X");
+            opponentController.setGameOver(gameOver());
             opponentController.checkArea();
-            endGame = gameOver();
-            opponentController.setGameOver(endGame);
+            opponentController.setGameOver(gameOver());
         }
     }
 
     @FXML
     protected void onButton3Click() {
-        if (button3.getText().isEmpty() && !endGame) {
+        if (button3.getText().isEmpty() && !gameOver()) {
             button3.setText("X");
+            opponentController.setGameOver(gameOver());
             opponentController.checkArea();
-            endGame = gameOver();
-            opponentController.setGameOver(endGame);
+            opponentController.setGameOver(gameOver());
         }
     }
 
         @FXML
     protected void onButton4Click() {
-        if (button4.getText().isEmpty() && !endGame) {
+        if (button4.getText().isEmpty() && !gameOver()) {
             button4.setText("X");
+            opponentController.setGameOver(gameOver());
             opponentController.checkArea();
-            endGame = gameOver();
-            opponentController.setGameOver(endGame);
+            opponentController.setGameOver(gameOver());
         }
     }
 
     @FXML
     protected void onButton5Click() {
-        if (button5.getText().isEmpty() && !endGame) {
+        if (button5.getText().isEmpty() && !gameOver()) {
             button5.setText("X");
+            opponentController.setGameOver(gameOver());
             opponentController.checkArea();
-            endGame = gameOver();
-            opponentController.setGameOver(endGame);
+            opponentController.setGameOver(gameOver());
         }
     }
 
     @FXML
     protected void onButton6Click() {
-        if (button6.getText().isEmpty() && !endGame) {
+        if (button6.getText().isEmpty() && !gameOver()) {
             button6.setText("X");
+            opponentController.setGameOver(gameOver());
             opponentController.checkArea();
-            endGame = gameOver();
-            opponentController.setGameOver(endGame);
+            opponentController.setGameOver(gameOver());
         }
     }
 
         @FXML
     protected void onButton7Click() {
-        if (button7.getText().isEmpty() && !endGame) {
+        if (button7.getText().isEmpty() && !gameOver()) {
             button7.setText("X");
+            opponentController.setGameOver(gameOver());
             opponentController.checkArea();
-            endGame = gameOver();
-            opponentController.setGameOver(endGame);
+            opponentController.setGameOver(gameOver());
         }
     }
 
     @FXML
     protected void onButton8Click() {
-        if (button8.getText().isEmpty() && !endGame) {
+        if (button8.getText().isEmpty() && !gameOver()) {
             button8.setText("X");
+            opponentController.setGameOver(gameOver());
             opponentController.checkArea();
-            endGame = gameOver();
-            opponentController.setGameOver(endGame);
+            opponentController.setGameOver(gameOver());
         }
     }
 
     @FXML
     protected void onButton9Click() {
-        if (button9.getText().isEmpty() && !endGame) {
+        if (button9.getText().isEmpty() && !gameOver()) {
             button9.setText("X");
+            opponentController.setGameOver(gameOver());
             opponentController.checkArea();
-            endGame = gameOver();
-            opponentController.setGameOver(endGame);
+            opponentController.setGameOver(gameOver());
         }
     }
 
@@ -155,9 +154,9 @@ public class TicTacToeController {
         winLabel.setVisible(false);
         difficultySelected = easyRadioBtn.isSelected() || hardRadioBtn.isSelected();
         if (easyRadioBtn.isSelected()) {
-                opponentController = new EasyOpponentController(endGame, buttons);
+                opponentController = new EasyOpponentController(gameOver(), buttons);
         } else if (hardRadioBtn.isSelected()) {
-                opponentController = new HardOpponentController(endGame, buttons);
+                opponentController = new HardOpponentController(gameOver(), buttons);
         }
         easyRadioBtn.setSelected(false);
         hardRadioBtn.setSelected(false);
@@ -166,7 +165,6 @@ public class TicTacToeController {
             button.setStyle("-fx-background-color: white");
         }
         gameActive = true;
-        endGame = false;
         startButton();
     }
 
