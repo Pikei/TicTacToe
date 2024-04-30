@@ -12,7 +12,8 @@ Content about to change
 
 
 ### Code
-_Source code is inside [src/main/java/com.practice.tictactoe](https://github.com/Pikei/TicTacToe/blob/f8b50543c75291a2c5c2d652bf492ec35ef3a462/src/main/java/com/practice/tictactoe)_ *same paragraph*
+_Source code is inside [src/main/java/com.practice.tictactoe](https://github.com/Pikei/TicTacToe/blob/f8b50543c75291a2c5c2d652bf492ec35ef3a462/src/main/java/com/practice/tictactoe)_
+
 _Layout is inside [src/main/resources/com.practice.tictactoe](https://github.com/Pikei/TicTacToe/tree/f8b50543c75291a2c5c2d652bf492ec35ef3a462/src/main/resources/com/practice/tictactoe)_
 1. [TicTacToeApplication](https://github.com/Pikei/TicTacToe/blob/f8b50543c75291a2c5c2d652bf492ec35ef3a462/src/main/java/com/practice/tictactoe/TicTacToeApplication.java) - this is a entry point of application.
 2. [TicTacToeController](https://github.com/Pikei/TicTacToe/blob/f8b50543c75291a2c5c2d652bf492ec35ef3a462/src/main/java/com/practice/tictactoe/TicTacToeController.java) - this class dictates how game works
