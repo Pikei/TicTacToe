@@ -3,6 +3,7 @@ package com.practice.tictactoe;
 import javafx.scene.control.Button;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class HardOpponentController extends OpponentController {
@@ -25,27 +26,39 @@ public class HardOpponentController extends OpponentController {
     @Override
     void checkArea() {
         if (gameOver) return;
-        List<Button> possibleMoves = new ArrayList<>();
-        for (Button button : buttons) {
-            if (button.getText().isEmpty()) {
-                possibleMoves.add(button);
-            }
-        }
-        //temporary solution not working
-        for (Button button : possibleMoves) {
-            button.setText("O");
-            for (Button[] combination : winningCombinations) {
-                if (winCondition(combination[0], combination[1], combination[2], "O")) {
-                    System.out.println("opponent wins!");
-                    return;
-                } else {
-                    button.setText("");
+        String[][] currentBoard = {
+                {buttons[0].getText(), buttons[1].getText(), buttons[2].getText()},
+                {buttons[3].getText(), buttons[4].getText(), buttons[5].getText()},
+                {buttons[6].getText(), buttons[7].getText(), buttons[8].getText()}
+        };
+        move(currentBoard, "O");
+    }
+
+    private void move(String[][] currentBoard, String s) {
+        List<int[]> possibleMoves = new ArrayList<>();
+        for (int i = 0; i < currentBoard.length; i++) {
+            for (int j = 0; j < currentBoard[i].length; j++) {
+                if (currentBoard[i][j].isEmpty()) {
+                    possibleMoves.add(new int[]{i, j});
                 }
             }
         }
+
+//        String[][] futureBoard = new String[3][3];
+//        Arrays.setAll(futureBoard, i -> Arrays.copyOf(currentBoard[i], 3));
+//        for (int[] coordinate : possibleMoves) {
+//            futureBoard[coordinate[0]][coordinate[1]] = s;
+//            move(futureBoard, s.equals("O")?"X":"O");
+//            System.out.println();
+//        }
     }
 
-    private boolean winCondition(Button a, Button b, Button c, String s) {
-        return a.getText().equals(s) && b.getText().equals(s) && c.getText().equals(s);
+    private void win(String[][] currentBoard) {
+
+    }
+
+    private boolean winCondition(String a, String b, String c, String s) {
+        return a.equals(s) && b.equals(s) && c.equals(s);
     }
 }
+
